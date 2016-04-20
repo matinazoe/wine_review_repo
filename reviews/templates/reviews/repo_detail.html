@@ -2,16 +2,16 @@
 {% load bootstrap3 %}
 
 {% block title %}
-<h2>{{ wine.name }}</h2>
-<h5>{{ wine.review_set.count }} reviews ({{ wine.average_rating | floatformat }} average rating)</h5>
+<h2>{{ repo.name }}</h2>
+<h5>{{ repo.review_set.count }} reviews ({{ repo.average_rating | floatformat }} average rating)</h5>
 {% endblock %}
 
 {% block content %}
 <h3>Recent reviews</h3>
 
-{% if wine.review_set.all %}
+{% if repo.review_set.all %}
 <div class="row">
-    {% for review in wine.review_set.all %}
+    {% for review in repo.review_set.all %}
     <div class="col-xs-6 col-lg-4">
         <em>{{ review.comment }}</em>
         <h6>Rated {{ review.rating }} of 5 by {{ review.user_name }}</h6>
@@ -22,13 +22,13 @@
     {% endfor %}
 </div>
 {% else %}
-<p>No reviews for this wine yet</p>
+<p>No reviews for this repo yet</p>
 {% endif %}
 
 <h3>Add your review</h3>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'reviews:add_review' wine.id %}" method="post" class="form">
+<form action="{% url 'reviews:add_review' repo.id %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form layout='inline' %}
     {% buttons %}

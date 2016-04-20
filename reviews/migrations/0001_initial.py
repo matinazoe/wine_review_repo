@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Wine',
+            name='Repo',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='review',
-            name='wine',
-            field=models.ForeignKey(to='reviews.Wine'),
+            name='repo',
+            field=models.ForeignKey(to='reviews.Repo'),
         ),
     ]
