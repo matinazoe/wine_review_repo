@@ -1,0 +1,19 @@
+h1 {
+    color: #FCA205;
+	font-family: 'Lobster';
+}
+body {
+    padding-left: 15px;
+}
+h2 a {
+    color: #0033FF;
+    font: italic bold 12px/30px Georgia, serif;
+}
+h4 {
+    padding-left: 15px;
+}
+h6 a {
+    color: #0080ff;
+    font:  bold 14px/30px cursive, serif;
+	font-style: oblique;
+}

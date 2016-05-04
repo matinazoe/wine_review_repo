@@ -1,13 +1,22 @@
+{% load staticfiles %}
 {% load bootstrap3 %}
 
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
 {% block bootstrap3_content %}
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/review.css' %}">
+	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <title>GitHub Recommendation Engine</title>
+</head>
+
 <div class="container">
     <nav class="navbar navbar-default">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'reviews:review_list' %}">GitHub Recommendation Engine</a>
+            <a class="navbar-brand" href="{% url 'reviews:review_list' %}">Recommendation Engine</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
